@@ -17,17 +17,17 @@ public class PauseMenu : MonoBehaviour
             if (gameIsPaused)              // When game is not paused
             {
 
-                resumeGame();               // When called, method resumes game
+                ResumeGame();               // When called, method resumes game
             }
             else                         // When game is paused
             {
 
-                pauseGame();               // When called, method pauses game
+                PauseGame();               // When called, method pauses game
             }
         }
     }
 
-    public void resumeGame()             // This method, when called, changes game from the paused state back to normal
+    public void ResumeGame()             // This method, when called, changes game from the paused state back to normal
     {
         GameObject.Find("Player").GetComponent<PlayerController>().freezeMovement = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -37,13 +37,20 @@ public class PauseMenu : MonoBehaviour
 
     }
 
-    void pauseGame()                    // Method controls what happens when game is in paused state
+    void PauseGame()                    // Method controls what happens when game is in paused state
     {
         GameObject.Find("Player").GetComponent<PlayerController>().freezeMovement = true;
         Cursor.lockState = CursorLockMode.None;
         pauseMenuUI.SetActive(true);     // UI gets switched from default of off (not active) to on (active)
         Time.timeScale = 0f;             // Freezes the game completely while in pause, goes from normal time of 1f to 0f
         gameIsPaused = true;               // Game state is now in pause
+    }
+
+    public void RetryGame()
+    {
+        GameObject.Find("GameManager").GetComponent<GameManager>().RestartLevel();
+        ResumeGame();
+       
     }
 
     public void QuitGame()               //  Once called, completely quits game
