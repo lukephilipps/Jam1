@@ -7,25 +7,21 @@ public class PauseMenu : MonoBehaviour
     public static bool gameIsPaused = false;    // Default game state is: not paused
     public GameObject pauseMenuUI;            // The UI object itself
 
-    public GameObject frozen;
-    private PlayerController frozenState;
-
     
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))       // Esc key pauses and unpauses game
         {
 
-            frozenState = frozen.GetComponent<PlayerController>();
 
             if (gameIsPaused == false)              // When game is not paused
             {
-                frozenState.freezeMovement = false;
+
                 resumeGame();               // When called, method resumes game
             }
             else                         // When game is paused
             {
-                frozenState.freezeMovement = true;
+
                 pauseGame();               // When called, method pauses game
             }
         }
@@ -37,7 +33,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;             // Time is set back to normal, which is: 1f
         gameIsPaused = false;              // Game state is: not paused
 
-        frozenState.freezeMovement == false;
+
     }
 
     void pauseGame()                    // Method controls what happens when game is in paused state
