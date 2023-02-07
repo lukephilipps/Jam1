@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     public float curSize = .5f;
     [SerializeField] float minSize = 1f;
     [SerializeField] float maxSize = 100f;
-    [SerializeField] bool freezeMovement;
+    public bool freezeMovement;
 
     void Awake()
     {
