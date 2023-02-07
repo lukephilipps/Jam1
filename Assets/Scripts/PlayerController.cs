@@ -262,6 +262,7 @@ public class PlayerController : MonoBehaviour
 
     public void WinSequence()
     {
+        ps.Emit(15);
         freezeMovement = true;
         rb.isKinematic = true;
     }
