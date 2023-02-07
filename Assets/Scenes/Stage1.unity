@@ -2464,6 +2464,7 @@ GameObject:
   - component: {fileID: 102387368}
   - component: {fileID: 102387370}
   - component: {fileID: 102387369}
+  - component: {fileID: 102387371}
   m_Layer: 0
   m_Name: Pause Menu
   m_TagString: Untagged
@@ -2531,6 +2532,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 102387367}
   m_CullTransparentMesh: 1
+--- !u!95 &102387371
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102387367}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7dcb5419b0f249147a172cc33389f3cf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &103174979 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 79beea73f31a6c04da9cce9cf8a3325e, type: 3}
@@ -27696,7 +27717,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
@@ -44000,7 +44021,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3614558663142368878, guid: 04e96fc61849ec640b5c7344d3af4ec8, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3614558663142368878, guid: 04e96fc61849ec640b5c7344d3af4ec8, type: 3}
       propertyPath: m_LocalPosition.x
