@@ -23,9 +23,9 @@ public class ColorCoding : MonoBehaviour
             col.gameObject.GetComponent<MeshRenderer>().material.color = Color.yellow;
             coloredBlocks = coloredBlocks + 1;
         }
-        else
+        else if(col.gameObject.tag == "Destroyed")
         {
-            // Destroy(col.gameObject.);
+            Destroy(col.gameObject);
         }
         if(coloredBlocks == totalBlocks)
         {
