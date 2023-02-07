@@ -14,7 +14,7 @@ public class PauseMenu : MonoBehaviour
         {
 
 
-            if (gameIsPaused == false)              // When game is not paused
+            if (gameIsPaused)              // When game is not paused
             {
 
                 resumeGame();               // When called, method resumes game
@@ -32,7 +32,6 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);  // UI is in its normal state which is off (not active)
         Time.timeScale = 1f;             // Time is set back to normal, which is: 1f
         gameIsPaused = false;              // Game state is: not paused
-
 
     }
 
