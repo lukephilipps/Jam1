@@ -36,6 +36,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float maxSize = 100f;
     public bool freezeMovement;
 
+    public AudioClip grabItem;
+    public AudioClip jump;
+
     void Awake()
     {
         camera = GameObject.Find("PlayerFollowCamera").GetComponent<CinemachineVirtualCamera>();
@@ -99,6 +102,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
+            GameObject.Find("GameManager").GetComponent<GameManager>().audioSource.PlayOneShot(jump, .8f);
             rb.AddForce(new Vector3(0f, jumpPower, 0f), ForceMode.VelocityChange);
         }
     }
@@ -230,6 +234,7 @@ public class PlayerController : MonoBehaviour
 
     public void GrowAmount(float amount)
     {
+        GameObject.Find("GameManager").GetComponent<GameManager>().audioSource.PlayOneShot(grabItem, .7f);
         float currentScale = transform.localScale.x;
         if (currentScale >= maxSize)
         {
@@ -265,5 +270,6 @@ public class PlayerController : MonoBehaviour
         ps.Emit(15);
         freezeMovement = true;
         rb.isKinematic = true;
+        GameObject.Find("GameManager").GetComponent<GameManager>().WinLevel();
     }
 }

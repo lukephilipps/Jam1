@@ -10,7 +10,7 @@ public class PauseMenu : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))       // Esc key pauses and unpauses game
+        if (Input.GetKeyDown(KeyCode.Escape) && GameObject.Find("GameManager").GetComponent<GameManager>().canPause)       // Esc key pauses and unpauses game
         {
 
 

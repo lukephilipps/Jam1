@@ -149,6 +149,9 @@ MonoBehaviour:
   curSize: 0.5
   minSize: 0.5
   maxSize: 5
+  freezeMovement: 0
+  grabItem: {fileID: 8300000, guid: 80bea17b674a5ee49ac891f146361697, type: 3}
+  jump: {fileID: 8300000, guid: 78d82db45be3a6d46802c05d811885c6, type: 3}
 --- !u!1 &1396384448528034493
 GameObject:
   m_ObjectHideFlags: 0
